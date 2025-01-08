@@ -14,7 +14,7 @@ services:
     volumes:
       - ../:/app
       - /var/run/docker.sock:/var/run/docker.sock
-    command: [ "sh", "-c", "sh /app/docker/entrypoints/development_entrypoint.sh" ]
+    command: [ "sh", "-c", "sh /app/docker/entrypoints/development_entrypoint.sh" 
     networks:
       - uvlhub_network
 
@@ -27,7 +27,7 @@ services:
       dockerfile: docker/images/Dockerfile.mariadb
     restart: always
     ports:
-      - "3306:3306"
+      - "3306:3306
     volumes:
       - db_data:/var/lib/mysql
     networks:
@@ -46,7 +46,7 @@ services:
     networks:
       - uvlhub_network
 
-volumes:
+volumes
   db_data:
 
 networks:
