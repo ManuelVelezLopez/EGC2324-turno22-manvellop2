@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 require 'pathname'
-require 'fileutils'
+require fileutils
 
 # Method to load environment variables from an .env file and return them as a hash
 def load_env(file)
@@ -35,10 +35,10 @@ end
 Vagrant.configure("2") do |config|
 
   # Choose a base box
-  config.vm.box = "ubuntu/jammy64"
+  config.vm.box = "utuntu/jammy64"
 
   # Network configuration
-  config.vm.network "forwarded_port", guest: 5000, host: 5000
+  config.vm.network "forwarded_port", guest: 5000
   config.vm.network "forwarded_port", guest: 8089, host: 8089
 
   # Synced folders
