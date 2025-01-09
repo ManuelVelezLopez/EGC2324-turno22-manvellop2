@@ -2,6 +2,7 @@ name: release
 
 on:
   push: 
+    branches:
       - '**' # Activa el workflow solo en push de tags
 
 jobs:
