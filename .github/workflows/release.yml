@@ -2,8 +2,7 @@ name: release
 
 on:
   push: 
-    tags:
-      - '**'
+      - '**' # Activa el workflow solo en push de tags
 
 jobs:
   release:
@@ -12,5 +11,8 @@ jobs:
     
       - name: Checkout
         uses: actions/checkout@v2
+      
       - name: Release
         uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref_name }} # Toma el nombre del tag del evento
